@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import eslintPlugin from "vite-plugin-eslint";
-import {createStyleImportPlugin, AntdResolve} from 'vite-plugin-style-import';
+import { viteMockServe } from 'vite-plugin-mock'
 import { resolve } from "path";
 
 function pathResolve(dir) {
@@ -18,9 +18,13 @@ export default defineConfig({
       failOnError: false,
       include: ["src/**/*.js", "src/**/*.tsx", "src/**/*.ts"],
     }),
-    createStyleImportPlugin({
-      resolves: [AntdResolve()]
+    viteMockServe({// 更多配置见最下方
+      logger: true,
+      mockPath: "./mock/", // 文件位置
+      enable: true, // 开启
+      watchFiles: true, // 监听变动
     })
+
   ],
   css: {
     preprocessorOptions: {
@@ -38,4 +42,16 @@ export default defineConfig({
       },
     ],
   },
+  server: { 
+    //用来配置跨域
+    host: '127.0.0.1',
+    port: 8000,
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:3000',//目标服务器地址
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      },
+    }
+  }
 })

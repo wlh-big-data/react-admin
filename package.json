@@ -13,7 +13,8 @@
     "@ant-design/icons": "^5.1.0",
     "@loadable/component": "^5.15.3",
     "@rematch/core": "^2.2.0",
-    "antd": "4.x",
+    "ahooks": "^3.7.8",
+    "antd": "^5.12.8",
     "axios": "^1.4.0",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
@@ -24,7 +25,8 @@
     "react-router-dom": "^6.11.2",
     "react-use": "^17.4.0",
     "react-vcode": "1.0.11",
-    "redux": "^4.2.1"
+    "redux": "^4.2.1",
+    "use-double-click": "^1.0.5"
   },
   "devDependencies": {
     "@types/loadable__component": "^5.13.4",
@@ -55,6 +57,7 @@
     "typescript": "^5.0.4",
     "vite": "^4.3.8",
     "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-mock": "^3.0.1",
     "vite-plugin-style-import": "^2.0.0"
   }
 }

@@ -4,6 +4,7 @@ import React, { useMemo } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
+import NoPowerContainer from "@/pages/ErrorPages/401";
 
 import type { Menu } from "@/models/index.type";
 
@@ -60,7 +61,7 @@ export function AuthNoPower(props: Props) {
   console.log("auth:", userinfo, isHavePower, location.pathname);
 
   if (!isHavePower && location.pathname !== "/401") {
-    return <Navigate to="/401" replace />;
+    return <NoPowerContainer />;
   }
 
   return props.children;
