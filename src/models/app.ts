@@ -55,6 +55,7 @@ export default {
     async onLogin(params: { username: string; password: string }) {
       try {
         const res: Res = await axios.post("/api/login", params);
+        localStorage.setItem('token', res.data.token);
         return res;
       } catch (err) {
         message.error("网络错误，请重试");

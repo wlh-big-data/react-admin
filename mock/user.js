@@ -13,7 +13,7 @@ export default [
       } else if (u.password !== p.password) {
         return { status: 204, data: null, message: "密码错误" };
       }
-      return { status: 200, data: u, message: "登录成功" };
+      return { status: 200, data: {...u, token: '12345'}, message: "登录成功" };
     },
   },
   {
