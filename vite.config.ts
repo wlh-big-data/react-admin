@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react-swc'
 import eslintPlugin from "vite-plugin-eslint";
 import { viteMockServe } from 'vite-plugin-mock'
 import { resolve } from "path";
+import externalGlobals from "vite-plugin-external-globals";
+
 
 function pathResolve(dir) {
   return resolve(process.cwd(), ".", dir);
@@ -23,7 +25,19 @@ export default defineConfig({
       mockPath: "./mock/", // 文件位置
       enable: true, // 开启
       watchFiles: true, // 监听变动
-    })
+    }),
+    externalGlobals({
+      injectTo: "body",
+      integrity: true,
+      crossorigin: "anonymous",
+      entry: [
+          {
+              name: "three",
+              path: "",
+              var: "THREE",
+          },
+      ],
+  }),
 
   ],
   css: {

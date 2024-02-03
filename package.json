@@ -16,6 +16,8 @@
     "ahooks": "^3.7.8",
     "antd": "^5.12.8",
     "axios": "^1.4.0",
+    "html2canvas": "^1.4.1",
+    "load-bmfont": "^1.4.1",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "qs": "^6.11.2",
@@ -26,6 +28,9 @@
     "react-use": "^17.4.0",
     "react-vcode": "1.0.11",
     "redux": "^4.2.1",
+    "three": "^0.160.0",
+    "three-bmfont-text": "^3.0.1",
+    "three-mesh-ui": "^6.5.4",
     "use-double-click": "^1.0.5"
   },
   "devDependencies": {
@@ -57,6 +62,7 @@
     "typescript": "^5.0.4",
     "vite": "^4.3.8",
     "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-external-globals": "^0.4.1",
     "vite-plugin-mock": "^3.0.1",
     "vite-plugin-style-import": "^2.0.0"
   }
